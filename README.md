@@ -5,12 +5,13 @@ This project provides Integration Tests for 'The Assessment API'
 - **Newtonsoft.json** is included as nuget package and used to DeserializeObject
 - Tests have been written in **NUnit**
 
+
 **Run Tests**
 
   Do the folowing steps to run tests:
 - Clone this repository
 - Open the solution in Visual Studio
-- Rebuild
+- Rebuild - **Known Issue** If you've opened a project and restored NuGet packages, but still see broken references, try reinstalling each of those packages (RestSharp.Net2, NUnit, Newtonsoft.Json, NUnit3TestAdapter). https://docs.microsoft.com/en-us/nuget/consume-packages/reinstalling-and-updating-packages
 - From the Test menu item, run the tests
 
 ![alt text](https://github.com/OLorents/AssessmentAPI/blob/master/AssestmentApi.IntegrationTests/Images/RunTests.png)
