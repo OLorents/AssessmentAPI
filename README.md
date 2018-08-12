@@ -32,7 +32,7 @@ Following cases are covered:
 2. **GetAll**: GET - /companies and GET - /employees
      - Check that valid GET request returns a 200 OK status code
      - Check that GET request returns empty data when no data exists
-     - Check that GET request returns correct data if it exists, check that
+     - Check that GET request returns correct data if it exists
      - Check that GET request fails with InvalidToken, a 401 Unauthorized status code is returned
 3. **GetById**: GET - /companies/id/{companyId} and GET - /employees /id/{employeeId}
    - Check that a valid GetById request returns correct data ('id' is not present in Response Body)
