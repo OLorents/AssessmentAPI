@@ -47,6 +47,7 @@ namespace AssestmentApi.IntegrationTests.Tests
         [Test]
         public void GetAllCompanies_TwoCompaniesExist()
         {
+            //Arrange
             //Create two companies
             var expectedCompanies = new List<string>{ "Company1", "Company2" };
             foreach (var company in expectedCompanies)
@@ -54,9 +55,11 @@ namespace AssestmentApi.IntegrationTests.Tests
                 Create(_client, company);
             }
 
+            //Act
             //GET All companies
             var response = GetAll(_client);
 
+            //Assert
             Assert.AreEqual(System.Net.HttpStatusCode.OK, response.StatusCode, "Status Code is not 'OK'");
             Assert.AreEqual(200, (int)response.StatusCode, "Status Code is not '200'");
 
