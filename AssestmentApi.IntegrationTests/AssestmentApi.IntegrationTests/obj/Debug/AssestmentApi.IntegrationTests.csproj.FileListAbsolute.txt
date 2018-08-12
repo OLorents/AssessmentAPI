@@ -39,3 +39,4 @@ D:\Git\AssestmentApi.IntegrationTests\AssestmentApi.IntegrationTests\obj\Debug\A
 D:\Git\AssestmentApi.IntegrationTests\AssestmentApi.IntegrationTests\obj\Debug\AssestmentApi.IntegrationTests.csproj.CopyComplete
 D:\Git\AssestmentApi.IntegrationTests\AssestmentApi.IntegrationTests\obj\Debug\AssestmentApi.IntegrationTests.dll
 D:\Git\AssestmentApi.IntegrationTests\AssestmentApi.IntegrationTests\obj\Debug\AssestmentApi.IntegrationTests.pdb
+D:\Git\AssestmentApi.IntegrationTests\AssestmentApi.IntegrationTests\obj\Debug\AssestmentApi.IntegrationTests.csprojAssemblyReference.cache
