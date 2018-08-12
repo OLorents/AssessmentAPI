@@ -13,5 +13,14 @@ This project provides Integration Tests for 'The Assessment API'.
 - Rebuild.
 - From the Test menu item, run the tests.
 
+![alt text](https://github.com/OLorents/AssessmentAPI/blob/master/AssestmentApi.IntegrationTests/Images/RunTests.png)
+
+- Open the Test Explorer window, and check test results.
+
+![alt text](https://github.com/OLorents/AssessmentAPI/blob/master/AssestmentApi.IntegrationTests/Images/OpenTestExplorer.png)
+
+![alt text](https://github.com/OLorents/AssessmentAPI/blob/master/AssestmentApi.IntegrationTests/Images/TestExplorer.png)
+
+
 
 
