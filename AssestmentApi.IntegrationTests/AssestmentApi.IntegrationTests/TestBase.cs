@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using RestSharp;
 
@@ -19,7 +21,6 @@ namespace AssestmentApi.IntegrationTests
         public virtual void TestSetUp()
         {
             Token = GetToken();
-            
         }
 
         public string GetToken()
@@ -32,6 +33,44 @@ namespace AssestmentApi.IntegrationTests
             JObject results = JObject.Parse(response.Content);
             var token = (string)results["access_token"];
             return token.Length > 0 ? token : null;
-        }        
+        }
+
+        #region Helper Methods
+
+        protected void Create(RestClient client, string name)
+        {
+            var request = new RestRequest(Method.POST);
+            request.AddHeader(Authorization, Bearer + Token);
+            request.RequestFormat = DataFormat.Json;
+            request.AddBody(new { Name = name });
+            client.Execute(request);
+        }
+
+        protected RestResponse GetAll(RestClient client)
+        {
+            var request = new RestRequest(Method.GET);
+            request.AddHeader(Authorization, Bearer + Token);
+            return client.Execute(request);
+        }
+
+        protected List<ResponseBody> ParseResponse(RestResponse response)
+        {
+            return JsonConvert.DeserializeObject<List<ResponseBody>>(response.Content);
+        }
+
+        protected RestResponse GetById(RestClient client, int? id)
+        {
+            var request = new RestRequest($"/id/{id}", Method.GET);
+            request.AddHeader(Authorization, Bearer + Token);
+            return client.Execute(request);
+        }
+
+        protected RestResponse DeleteById(RestClient client, int? id)
+        {
+            var request = new RestRequest($"/id/{id}", Method.DELETE);
+            request.AddHeader(Authorization, Bearer + Token);
+            return client.Execute(request);
+        }
+        #endregion
     }
 }
