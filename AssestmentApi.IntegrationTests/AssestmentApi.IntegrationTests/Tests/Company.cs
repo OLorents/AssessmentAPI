@@ -18,6 +18,7 @@ namespace AssestmentApi.IntegrationTests.Tests
             base.TestSetUp();
             _client = new RestClient(CompaniesBaseUrl);
 
+            // To be sure that no data exists cleanup should be done before running the test
             var response = GetAll(_client);
             var restMessages = ParseResponse(response);
             foreach (var restMessage in restMessages)
@@ -113,7 +114,7 @@ namespace AssestmentApi.IntegrationTests.Tests
         }
 
         /// <summary>
-        /// This test checks that 'POST /companies' request creates company 
+        /// This test checks that 'POST /companies' request creates company and ensures a 200 status code is returned
         /// </summary>
         [Test]
         public void CreateCompany()

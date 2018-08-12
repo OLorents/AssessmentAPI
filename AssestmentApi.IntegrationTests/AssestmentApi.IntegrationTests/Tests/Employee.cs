@@ -17,6 +17,7 @@ namespace AssestmentApi.IntegrationTests.Tests
             base.TestSetUp();
             _client = new RestClient(EmployeesBaseUrl);
 
+            // To be sure that no data exists cleanup should be done before running the test
             var response = GetAll(_client);
             var restMessages = ParseResponse(response);
             foreach (var restMessage in restMessages)
