@@ -25,15 +25,15 @@ This project provides Integration Tests for 'The Assessment API'
 
 Following cases are covered:
 1. **Create**: Post /companies and Post /employees
- - Create company/employee and check a 200 OK status code is returned
- - Check the data is saved correctly
- - Check that POST request fails with incorrect data in Request Body, a 400 BadRequest status code is returned
- - Check that POST request fails with InvalidToken, a 401 Unauthorized status code is returned(Autherization is required for all requests)
+     - Create company/employee and check a 200 OK status code is returned
+     - Check the data is saved correctly
+     - Check that POST request fails with incorrect data in Request Body, a 400 BadRequest status code is returned
+     - Check that POST request fails with InvalidToken, a 401 Unauthorized status code is returned(Autherization is required for all requests)
 2. **GetAll**: GET - /companies and GET - /employees
-  - Check that valid GET request returns a 200 OK status code
-  - Check that GET request returns empty data when no data exists
-  - Check that GET request returns correct data if it exists, check that
-  - Check that GET request fails with InvalidToken, a 401 Unauthorized status code is returned
+     - Check that valid GET request returns a 200 OK status code
+     - Check that GET request returns empty data when no data exists
+     - Check that GET request returns correct data if it exists, check that
+     - Check that GET request fails with InvalidToken, a 401 Unauthorized status code is returned
 3. **GetById**: GET - /companies/id/{companyId} and GET - /employees /id/{employeeId}
    - Check that a valid GetById request returns correct data ('id' is not present in Response Body)
    - Check that valid GetById request returns a 200 OK status code
