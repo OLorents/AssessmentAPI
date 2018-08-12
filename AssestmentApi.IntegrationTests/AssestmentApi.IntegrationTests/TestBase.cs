@@ -10,6 +10,7 @@ namespace AssestmentApi.IntegrationTests
    public class TestBase
     {      
         protected string Token;
+        protected string InvalidToken = "InvalidToken";
         protected string UserName = "testName1";
         protected string Password = "test";
         protected string GrantType = "password";
@@ -53,11 +54,6 @@ namespace AssestmentApi.IntegrationTests
             return client.Execute(request);
         }
 
-        protected List<ResponseBody> ParseResponse(RestResponse response)
-        {
-            return JsonConvert.DeserializeObject<List<ResponseBody>>(response.Content);
-        }
-
         protected RestResponse GetById(RestClient client, int? id)
         {
             var request = new RestRequest($"/id/{id}", Method.GET);
@@ -70,6 +66,11 @@ namespace AssestmentApi.IntegrationTests
             var request = new RestRequest($"/id/{id}", Method.DELETE);
             request.AddHeader(Authorization, Bearer + Token);
             return client.Execute(request);
+        }
+
+        protected List<ResponseBody> ParseResponse(RestResponse response)
+        {
+            return JsonConvert.DeserializeObject<List<ResponseBody>>(response.Content);
         }
         #endregion
     }
